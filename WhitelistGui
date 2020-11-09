@@ -71,6 +71,6 @@ if data.Key == key then
         warn("Blacklist Reason : "..data.Reason)
     end
 else
-    game.Players.LocalPlayer:Kick("Invalid Key Signature. Trying to bypass will result in a Blacklist!")
+    warn("Invalid Key Signature. Trying to bypass will result in a Blacklist!")
     
 end
