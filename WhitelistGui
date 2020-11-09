@@ -1,6 +1,8 @@
 local http_request = http_request
 if syn then 
     http_request = syn.request
+elseif SENTINEL_V2 then
+    http_request = request 
 end
 
 local getservice = game.GetService
@@ -51,13 +53,12 @@ if data.Key == key then
             if data.random == random then
                 if data.Hwid == "Unknown" then
                     -- update hwid
-                    print("Whitelist!")
+                    print("Whitelist !!!")
                     http_request_get("https://afsez.000webhostapp.com/changehwid.php?key=".. key .."&hwid="..hwid)
                     print("Update Hwid")
                 else
                     -- no update hwid
-                    print("Whitelist!")
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/Friend-Exe/AFSEZ/main/Obfuscated1", true))()
+                    print("Whitelist !!!")
                 end
             else
                 warn("Invalid Random")
@@ -69,6 +70,5 @@ if data.Key == key then
         warn("Blacklist Reason : "..data.Reason)
     end
 else
-    warn("Invalid Key Signature. Trying to bypass will result in a Blacklist!")
-    
+    warn("Invalid Key")
 end
