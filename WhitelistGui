@@ -45,7 +45,7 @@ end
 
 local random = randomString
 
-local data = jsondecode(http_request_get("https://sql9.freemysqlhosting.net/server.php?key=".. key .."&random="..random))
+local data = jsondecode(http_request_get("https://http://afsez.000webhostapp.com/server.php?key=".. key .."&random="..random))
 
 if data.Key == key then
     if data.Blacklist == "False" then
@@ -54,7 +54,7 @@ if data.Key == key then
                 if data.Hwid == "Unknown" then
                     -- update hwid
                     print("Whitelist!")
-                    http_request_get("https://sql9.freemysqlhosting.net/changehwid.php?key=".. key .."&hwid="..hwid)
+                    http_request_get("https://afsez.000webhostapp.com/changehwid.php?key=".. key .."&hwid="..hwid)
                     print("Update Hwid")
                 else
                     -- no update hwid
