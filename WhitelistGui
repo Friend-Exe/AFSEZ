@@ -44,7 +44,7 @@ end
 
 local random = randomString
 
-local data = jsondecode(http_request_get("https://afsez.000webhostapp.com/server.php?key=".. key .."&random="..random))
+local data = jsondecode(http_request_get("https://afsez.000webhostapp.com/server.php?key=".. key .."&secondkey="..random))
 
 if data.Key == key then
     if data.Blacklist == "False" then
